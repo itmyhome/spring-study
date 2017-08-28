@@ -1,0 +1,23 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+       <!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"-->
+       <!--xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">-->
+
+    <!--<dubbo:application name="stalingrad-user-consumer"/>-->
+
+    <!--<dubbo:consumer check="false" filter="consumerRequestFilter"></dubbo:consumer>-->
+
+    <!--<dubbo:registry address="${miaoqian.dubbo.provider.zookeeper}" timeout="10000"></dubbo:registry>-->
+
+    <!--<dubbo:reference interface="com.miaoqian.sms.api.dubbo.SmsAPI" id="smsAPI" />-->
+
+    <!--<dubbo:reference id="outUserRead" interface="com.miaoqian.usersvc.dubbo.api.outuser.OutUserRead" timeout="10000"/>-->
+    <!--<dubbo:reference id="outUserWrite" interface="com.miaoqian.usersvc.dubbo.api.outuser.OutUserWrite" timeout="10000"/>-->
+    <!---->
+    <!--<dubbo:reference id="userPromotionQueryApi" interface="com.miaoqian.promotion.client.api.UserPromotionQueryApi" version="1.0" cache="false" timeout="10000"/>-->
+
+    <!--<dubbo:reference id="capitalQueryApi" interface="com.miaoqian.trade.api.front.CapitalQueryApi" timeout="10000"/>-->
+    <!--<dubbo:reference id="tradeQueryApi" interface="com.miaoqian.trade.api.front.TradeQueryApi" timeout="10000"/>-->
+
+
+<!--</beans>-->
