@@ -55,6 +55,16 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
+
         <!--<dependency>-->
             <!--<groupId>org.mybatis.spring.boot</groupId>-->
             <!--<artifactId>mybatis-spring-boot-starter</artifactId>-->
@@ -70,6 +80,18 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.binarywang</groupId>
+            <artifactId>weixin-java-mp</artifactId>
+            <version>2.7.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.springboot</groupId>
+            <artifactId>best-pay-sdk</artifactId>
+            <version>1.1.0</version>
         </dependency>
 
     </dependencies>
@@ -98,6 +120,72 @@
             <!--</plugin>-->
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <miaoqian.app.env>dev</miaoqian.app.env>
+                <miaoqian.disconf.address>172.18.0.44:8899</miaoqian.disconf.address>
+                <miaoqian.properties.path>properties-dev</miaoqian.properties.path>
+                <miaoqian.log.path>/data/log/spring-study</miaoqian.log.path>
+                <miaoqian.rootlog.level>INFO</miaoqian.rootlog.level>
+                <miaoqian.actionlog.level>INFO</miaoqian.actionlog.level>
+                <miaoqian.sqllog.level>DEBUG</miaoqian.sqllog.level>
+                <miaoqian.consoleLog.level>INFO</miaoqian.consoleLog.level>
+                <miaoqian.log.flush>true</miaoqian.log.flush>
+                <miaoqian.log.buffer>false</miaoqian.log.buffer>
+            </properties>
+        </profile>
+        <profile>
+            <id>local</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <miaoqian.app.env>rd</miaoqian.app.env>
+                <miaoqian.disconf.address>172.18.0.44:8899</miaoqian.disconf.address>
+                <miaoqian.properties.path>properties-local</miaoqian.properties.path>
+                <miaoqian.log.path>/data/log/spring-study</miaoqian.log.path>
+                <miaoqian.rootlog.level>INFO</miaoqian.rootlog.level>
+                <miaoqian.actionlog.level>DEBUG</miaoqian.actionlog.level>
+                <miaoqian.sqllog.level>DEBUG</miaoqian.sqllog.level>
+                <miaoqian.consoleLog.level>INFO</miaoqian.consoleLog.level>
+                <miaoqian.log.flush>true</miaoqian.log.flush>
+                <miaoqian.log.buffer>false</miaoqian.log.buffer>
+            </properties>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <miaoqian.app.env>qa</miaoqian.app.env>
+                <miaoqian.disconf.address>172.18.0.44:8899</miaoqian.disconf.address>
+                <miaoqian.properties.path>properties-test</miaoqian.properties.path>
+                <miaoqian.log.path>/data/log/spring-study</miaoqian.log.path>
+                <miaoqian.rootlog.level>INFO</miaoqian.rootlog.level>
+                <miaoqian.actionlog.level>DEBUG</miaoqian.actionlog.level>
+                <miaoqian.sqllog.level>DEBUG</miaoqian.sqllog.level>
+                <miaoqian.consoleLog.level>ERROR</miaoqian.consoleLog.level>
+                <miaoqian.log.flush>true</miaoqian.log.flush>
+                <miaoqian.log.buffer>false</miaoqian.log.buffer>
+            </properties>
+        </profile>
+        <profile>
+            <id>online</id>
+            <properties>
+                <miaoqian.app.env>online</miaoqian.app.env>
+                <miaoqian.disconf.address>172.18.0.44:8899</miaoqian.disconf.address>
+                <miaoqian.properties.path>properties-online</miaoqian.properties.path>
+                <miaoqian.consoleLog.level>error</miaoqian.consoleLog.level>
+                <miaoqian.log.path>/data/log/spring-study</miaoqian.log.path>
+                <miaoqian.rootlog.level>ERROR</miaoqian.rootlog.level>
+                <miaoqian.actionlog.level>ERROR</miaoqian.actionlog.level>
+                <miaoqian.sqllog.level>ERROR</miaoqian.sqllog.level>
+                <miaoqian.log.flush>true</miaoqian.log.flush>
+                <miaoqian.log.buffer>false</miaoqian.log.buffer>
+            </properties>
+        </profile>
+    </profiles>
     <!--<dependencies>-->
     <!--<dependency>-->
     <!--<groupId>org.springframework.data</groupId>-->
